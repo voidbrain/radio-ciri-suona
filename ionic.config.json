@@ -1,0 +1,7 @@
+{
+  "name": "Radio CiriSuona",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
