@@ -26,14 +26,3 @@ jobs:
       - name: Build Angular
         run: npm run build
 
-      - name: Prepare www
-        run: |
-          rm -rf www
-          mkdir -p www
-          cp -R dist/* www/
-
-      - name: Upload www
-        uses: actions/upload-artifact@v4
-        with:
-          name: www
-          path: www/
