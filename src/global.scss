@@ -104,4 +104,21 @@ ion-toolbar::part(container) {
   }
 
   figure { margin: 0; }
+
+
+}
+
+html,
+body {
+  margin: 0!important;
+  width: 100%!important;
+  height: 100%!important;
+  overflow: hidden!important;
+}
+
+app-root {
+  display: block!important;
+  width: min(100vw, 160vh)!important;
+  height: min(100vh, 62.5vw)!important;
+  margin: auto!important;
 }

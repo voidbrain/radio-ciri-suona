@@ -1,52 +1,53 @@
-<app-header [backButton]="true" title=""> Radio </app-header>
+<app-header class="width1200" [backButton]="true" title=""> Radio </app-header>
 
 <ion-content class="ion-padding" [fullscreen]="true">
+  <div class="page-16-10">
+    <div class="card">
+      <h2>{{ activePage()?.name }}</h2>
+      <p>{{ activePage()?.description1 }}</p>
+      <p>{{ activePage()?.description2 }}</p>
+    </div>
 
-  <div class="card">
-    <h2>{{ activePage()?.name }}</h2>
-    <p>{{ activePage()?.description1 }}</p>
-    <p>{{ activePage()?.description2 }}</p>
-  </div>
+    <ion-grid class="ion-padding">
+      <ion-row>
+        @for (file of activePage()?.files; track file.id) {
+        <ion-col size="6">
+          <div class="card details">
+            <audio
+              #player
+              [src]="'/assets/files/' + file.id + '.mp3'"
+              (ended)="playingId = null"
+            ></audio>
 
-  <ion-grid class="ion-padding">
-    <ion-row>
-      @for (file of activePage()?.files; track file.id) {
-      <ion-col size="6">
-        <div class="card details">
-          <audio
-            #player
-            [src]="'/assets/files/' + file.id + '.mp3'"
-            (ended)="playingId = null"
-          ></audio>
+            <div [class.playing]="playingId === file.id">
+              <strong>{{ file.title }}</strong><br />
 
-          <div [class.playing]="playingId === file.id">
-            <strong>{{ file.title }}</strong><br />
+              <button class="play" (click)="play(file.id, player)">
+                @if (playingId === file.id) {
+                  <svg
+                    xmlns="http://w3.org"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    height="1em"
+                    fill="currentColor"
+                    style="vertical-align: middle"
+                  >
+                    <path
+                      d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+                    />
+                  </svg>
+                  Playing
 
-            <button class="play" (click)="play(file.id, player)">
-              @if (playingId === file.id) {
-                <svg
-                  xmlns="http://w3.org"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                  height="1em"
-                  fill="currentColor"
-                  style="vertical-align: middle"
-                >
-                  <path
-                    d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
-                  />
-                </svg>
-                Playing
+                } @else {
+                  ▶ Play
+                }
 
-              } @else {
-                ▶ Play
-              }
-
-            </button>
+              </button>
+            </div>
           </div>
-        </div>
-      </ion-col>
-      }
-    </ion-row>
-  </ion-grid>
+        </ion-col>
+        }
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
