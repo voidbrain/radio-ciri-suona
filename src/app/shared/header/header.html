@@ -1,0 +1,8 @@
+<ion-header>
+  <ion-toolbar>
+    @if (backButton() === true) {
+      <ion-button [routerLink]="['/']" slot="start" fill="clear">Back</ion-button>
+    }
+    <ion-title>{{ title() }}</ion-title>
+  </ion-toolbar>
+</ion-header>
