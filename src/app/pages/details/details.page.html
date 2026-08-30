@@ -15,14 +15,15 @@
           <div class="card details">
             <audio
               #player
-              [src]="'/assets/files/' + file.id + '.mp3'"
+              [src]="file.path ? '/assets/files/' + activePage()?.path + '/' + file.path : null"
               (ended)="playingId = null"
             ></audio>
 
             <div [class.playing]="playingId === file.id">
               <strong>{{ file.title }}</strong><br />
 
-              <button class="play" (click)="play(file.id, player)">
+              <button [class]="'play' + (file.path === undefined ? ' disabled' : '')"
+              [disabled]="file.path === undefined" (click)="play(file.id, player)">
                 @if (playingId === file.id) {
                   <svg
                     xmlns="http://w3.org"

@@ -31,21 +31,21 @@ export class DetailsPage implements OnInit, OnDestroy {
   private readonly route = inject(ActivatedRoute);
 
   playingId: number | null = null;
-currentPlayer: HTMLAudioElement | null = null;
+  currentPlayer: HTMLAudioElement | null = null;
 
-play(id: number, player: HTMLAudioElement) {
-  if (this.currentPlayer && this.currentPlayer !== player) {
-    this.currentPlayer.pause();
-    this.currentPlayer.currentTime = 0;
+  play(id: number, player: HTMLAudioElement) {
+    if (this.currentPlayer && this.currentPlayer !== player) {
+      this.currentPlayer.pause();
+      this.currentPlayer.currentTime = 0;
+    }
+
+    this.currentPlayer = player;
+    this.playingId = id;
+
+    player.play();
   }
 
-  this.currentPlayer = player;
-  this.playingId = id;
-
-  player.play();
-}
-
-  // ✅ Safe reactive route param (no NG0950)
+  // Safe reactive route param
   readonly id = toSignal(
     this.route.paramMap.pipe(
       map(params => params.get('id'))
@@ -53,13 +53,14 @@ play(id: number, player: HTMLAudioElement) {
     { initialValue: null }
   );
 
-  // ✅ Safe computed derived state
+  // Safe computed derived state
   protected readonly activePage = computed<Page | null>(() => {
     const id = this.id();
 
     if (!id) return null;
 
     const numericId = Number(id);
+
     if (Number.isNaN(numericId)) return null;
 
     const pages = this.content.pages();
@@ -72,7 +73,22 @@ play(id: number, player: HTMLAudioElement) {
     this.sleepService.startTracking();
   }
 
+  ionViewWillLeave() {
+    this.stopAudio();
+  }
+
   ngOnDestroy() {
+    this.stopAudio();
     this.sleepService.stopTracking();
+  }
+
+  private stopAudio() {
+    if (this.currentPlayer) {
+      this.currentPlayer.pause();
+      this.currentPlayer.currentTime = 0;
+      this.currentPlayer = null;
+    }
+
+    this.playingId = null;
   }
 }

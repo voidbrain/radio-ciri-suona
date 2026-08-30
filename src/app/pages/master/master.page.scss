@@ -12,10 +12,23 @@
   text-transform: uppercase;
 }
 
+
 .page-16-10 {
-  width: 1200px;
-  aspect-ratio: 16 / 10;
+  width: 100%;
 }
 .width1200{
-   width: 1200px;
+  width: 100%;
 }
+
+@media (min-width: 1201px) and (pointer: fine) {
+  .page-16-10 {
+    width: 1200px;
+    aspect-ratio: 16 / 10;
+    margin: 0 auto;
+  }
+  .width1200 {
+    width: 1200px;
+    margin: auto;
+  }
+}
+
