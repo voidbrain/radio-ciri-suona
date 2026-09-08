@@ -7,11 +7,12 @@
 }
 
 button.play[diabled], .disabled {
-  color: gray
+  color: gray;
 }
 
 button {
   font-family: "Roboto", sans-serif;
+  border-radius: 4px;
 }
 
 .card.details {

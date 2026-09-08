@@ -67,6 +67,9 @@
   --whiteheader:  #eee4e4;
   --ion-color-primary: var(--red);
 }
+.button-native {
+  --border-radius: 8px;
+}
 
 ion-button.outline {
   --background: transparent;
