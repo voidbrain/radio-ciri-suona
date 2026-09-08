@@ -74,24 +74,21 @@ body {
 
 ion-header {
   box-shadow: none !important;
-  padding: 1em;
+  padding: 0;
+}
+ion-toolbar{
+  padding: 1em
 }
 
 .logo {
   max-width: 120px;
   max-height: auto;
   display: inline-block;
-  position: absolute;
-  right: 0;
-
 }
-ion-title {
-  font-family: 'Special Elite', serif;
+.header-title {
+  font-family: "Special Elite", serif;
   color: var(--graytext);
-  p {
-    font-size: .8em;
-    width: 100px
-  }
+  margin-top: .4em;
 }
 
 ion-toolbar {
@@ -141,7 +138,7 @@ ion-toolbar::part(container) {
     color: var(--graytext);
     border-bottom: 2px solid var(--red);
 
-    padding: 1em;
+    padding: 1.4em;
     h2 {
       text-transform: uppercase;
       color: var(--red);
@@ -152,6 +149,7 @@ ion-toolbar::part(container) {
       color: var(--red);
       font-family: "Montserrat Bold", sans-serif;
     }
+    img { margin: auto; display: block; }
   }
 
   .card.details {

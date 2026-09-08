@@ -1,12 +1,19 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="app-toolbar">
+
     @if (backButton() === true) {
-      <ion-button [routerLink]="['/']" slot="start" fill="clear">Back</ion-button>
+      <ion-buttons slot="start">
+        <ion-button [routerLink]="['/']" slot="start">Back</ion-button>
+      </ion-buttons>
     }
-    <ion-title>
+
+    <div class="header-content" slot="end">
+      <div class="header-title">
+        {{ title() }}
+      </div>
+
       <img class="logo" src="./assets/icon/logo.png" />
-      <p>{{ title() }}</p>
-    </ion-title>
+    </div>
 
   </ion-toolbar>
 </ion-header>

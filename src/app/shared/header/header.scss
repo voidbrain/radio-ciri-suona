@@ -1,0 +1,30 @@
+.app-toolbar {
+  --min-height: 88px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+
+  height: 88px;
+}
+
+.header-title {
+  width: 200px;
+  flex: 0 0 200px;
+
+  font-size: 20px;
+  line-height: 1.05;
+  font-weight: 700;
+
+  white-space: normal;
+}
+
+.header-logo {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
