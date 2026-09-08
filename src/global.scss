@@ -74,6 +74,24 @@ body {
 
 ion-header {
   box-shadow: none !important;
+  padding: 1em;
+}
+
+.logo {
+  max-width: 120px;
+  max-height: auto;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+
+}
+ion-title {
+  font-family: 'Special Elite', serif;
+  color: var(--graytext);
+  p {
+    font-size: .8em;
+    width: 100px
+  }
 }
 
 ion-toolbar {
