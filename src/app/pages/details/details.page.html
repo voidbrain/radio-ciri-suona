@@ -4,8 +4,9 @@
   <div class="page-16-10">
     <div class="card">
       <h2>{{ activePage()?.name }}</h2>
-      <p>{{ activePage()?.description1 }}</p>
-      <p>{{ activePage()?.description2 }}</p>
+      <p [innerHTML]="activePage()?.description1"></p>
+      <p [innerHTML]="activePage()?.description2"></p>
+      <img [src]="activePage()?.image ? '/assets/' + activePage()?.image : null" />
     </div>
 
     <ion-grid class="ion-padding">

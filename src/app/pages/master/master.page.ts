@@ -21,6 +21,7 @@ import { KioskService } from '@/app/services/kiosk';
   private readonly modalCtrl = inject(ModalController);
 
   readonly pages = this.content.pages;
+  readonly masterPage = this.content.masterPage;
 
   async openExitKioskModal() {
     const modal = await this.modalCtrl.create({

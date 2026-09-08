@@ -4,9 +4,19 @@
   <div class="page-16-10">
     <ion-grid class="ion-padding">
       <ion-row>
+        <ion-col size="12">
+          <div class="card">
+            <h2>{{ masterPage()?.name }}</h2>
+            <p [innerHTML]="masterPage()?.description1"></p>
+            <p [innerHTML]="masterPage()?.description2"></p>
+            <img [src]="masterPage()?.image ? '/assets/' + masterPage()?.image : null" />
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
         @for (page of pages(); track $index) {
         <ion-col size="6">
-          <div class="card">
+          <div class="pages card">
               <a class="section" [routerLink]="['/details', page.id]">{{ page.name }}</a>
           </div>
         </ion-col>
