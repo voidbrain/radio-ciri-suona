@@ -5,42 +5,44 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class SleepService {
-  private readonly maxTimestampUnix = Date.now() + (5 * 1000 * 60); // 5 min
+
   private readonly router = inject(Router);
 
-  // Track if the app is currently in a "sleeping/timed-out" state
-  public readonly isAsleep = signal<boolean>(false);
+  private readonly inactivityMs = 5  * 1000;
 
-  // Keep track of the active interval ID so we can clean it up if needed
-  private timerId: any = null;
+  public readonly isAsleep = signal(false);
 
-  /**
-   * Starts monitoring the current time against an expiration timestamp.
-   * @param maxTimestampUnix The chosen maximum allowable Unix timestamp (in milliseconds)
-   */
+  private timerId: ReturnType<typeof setInterval> | null = null;
+  private maxTimestampUnix = 0;
+
   public startTracking(): void {
-    // Clean up any existing timer first
     this.stopTracking();
 
-    this.timerId = setInterval(() => {
-      const now = Date.now(); // Equivalent to timer.now
+    this.isAsleep.set(false);
 
-      if (now > this.maxTimestampUnix) {
+    this.resetActivity();
+
+    this.timerId = setInterval(() => {
+      if (Date.now() >= this.maxTimestampUnix) {
         this.isAsleep.set(true);
         this.stopTracking();
 
-        // Automatically redirect to the home page
-        console.log('App has entered sleep mode. Redirecting to home page...');
+        console.log(
+          'App has been inactive for 5 minutes. Redirecting to home page...',
+        );
+
         this.router.navigate(['/']);
       }
-    }, 1000); // Check every 1 second
+    }, 1000);
   }
 
-  /**
-   * Stops the active interval timer.
-   */
+  public resetActivity(): void {
+    console.log('User activity detected. Resetting inactivity timer.');
+    this.maxTimestampUnix = Date.now() + this.inactivityMs;
+  }
+
   public stopTracking(): void {
-    if (this.timerId) {
+    if (this.timerId !== null) {
       clearInterval(this.timerId);
       this.timerId = null;
     }

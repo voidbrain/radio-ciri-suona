@@ -2,11 +2,12 @@
   position: fixed;
   right: 0;
   bottom: 0;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 80px;
   z-index: 9999;
   background: transparent;
-  cursor:crosshair
+  cursor:crosshair;
+  border: 1px dashed transparent;
 }
 .pages.card {
   text-transform: uppercase;

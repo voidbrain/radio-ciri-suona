@@ -11,12 +11,20 @@
   height: 88px;
 }
 
-.header-title {
-  width: 180px;
-  flex: 0 0 180px;
+.title2 {
+  margin-top:3px
+}
 
-  font-size: 1.2em;
-  line-height: 1.05;
+ion-button {
+  text-transform: none;
+}
+
+.header-title {
+  width: 200px;
+  flex: 0 0 200px;
+
+  font-size: 1.1em;
+  line-height: 1.1;
   font-weight: 700;
 
   white-space: normal;

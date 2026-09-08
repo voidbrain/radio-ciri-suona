@@ -3,13 +3,14 @@
 
     @if (backButton() === true) {
       <ion-buttons slot="start">
-        <ion-button [routerLink]="['/']" slot="start">Back</ion-button>
+        <ion-button class="outline" [routerLink]="['/']" slot="start">Home</ion-button>
       </ion-buttons>
     }
 
     <div class="header-content" slot="end">
       <div class="header-title">
-        {{ title() }}
+        <div class="title">{{ title() }}</div>
+        <div class="title2">{{ title2() }}</div>
       </div>
 
       <img class="logo" src="./assets/icon/logo.png" />

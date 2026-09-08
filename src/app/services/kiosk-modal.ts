@@ -34,7 +34,7 @@ import { ModalController } from '@ionic/angular/standalone';
   template: `
     <ion-header>
       <ion-toolbar>
-        <ion-title>Exit Kiosk Mode</ion-title>
+        <ion-title>Kiosk Mode</ion-title>
 
         <ion-button slot="end" fill="clear" (click)="cancel()">
           ✕
@@ -53,12 +53,12 @@ import { ModalController } from '@ionic/angular/standalone';
 
       @if (error) {
         <ion-text color="danger">
-          Incorrect password
+          Password errata
         </ion-text>
       }
 
-      <ion-button expand="block" (click)="checkPassword()">
-        Unlock
+      <ion-button color="primary" expand="block" (click)="checkPassword()">
+        Sblocca
       </ion-button>
 
     </ion-content>

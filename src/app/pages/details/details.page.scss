@@ -10,8 +10,14 @@ button.play[diabled], .disabled {
   color: gray
 }
 
+button {
+  font-family: "Roboto", sans-serif;
+}
+
 .card.details {
   min-height: 15em;
+  font-family: "Special Elite", serif;
+  line-height: 1.6;
 }
 
 @media (min-width: 1001px) and (pointer: fine) {

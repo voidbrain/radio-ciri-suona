@@ -1,9 +1,7 @@
 import {
   Component,
   computed,
-  inject,
-  OnDestroy,
-  OnInit
+  inject
 } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
@@ -17,14 +15,24 @@ import { AppHeader } from '../../shared/header/header';
 import { Content } from '@/app/services/content';
 import { SleepService } from '@/app/services/sleep';
 import { Page } from '@/app/services/content';
-
+import { HostListener } from '@angular/core';
 @Component({
   selector: 'app-details',
   templateUrl: 'details.page.html',
   styleUrls: ['details.page.scss'],
   imports: [IonContent, AppHeader, CommonModule, IonGrid, IonRow, IonCol]
 })
-export class DetailsPage implements OnInit, OnDestroy {
+export class DetailsPage {
+
+  @HostListener('document:click')
+  @HostListener('document:touchstart')
+  @HostListener('document:pointerdown')
+  @HostListener('document:keydown')
+  @HostListener('document:scroll')
+  onUserActivity() {
+    this.sleepService.resetActivity();
+  }
+
 
   private readonly content = inject(Content);
   private readonly sleepService = inject(SleepService);
@@ -69,15 +77,11 @@ export class DetailsPage implements OnInit, OnDestroy {
     return page ?? null;
   });
 
-  ngOnInit() {
+  ionViewWillEnter() {
     this.sleepService.startTracking();
   }
 
   ionViewWillLeave() {
-    this.stopAudio();
-  }
-
-  ngOnDestroy() {
     this.stopAudio();
     this.sleepService.stopTracking();
   }
