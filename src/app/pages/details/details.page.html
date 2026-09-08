@@ -6,7 +6,7 @@
       <h2>{{ activePage()?.name }}</h2>
       <p [innerHTML]="activePage()?.description1"></p>
       <p [innerHTML]="activePage()?.description2"></p>
-      <img [src]="activePage()?.image ? '/assets/' + activePage()?.image : null" />
+      <img [src]="activePage()?.image ? './assets/' + activePage()?.image : null" />
     </div>
 
     <ion-grid class="ion-padding">
@@ -17,7 +17,7 @@
           <div class="card details">
             <audio
               #player
-              [src]="file.path ? '/assets/files/' + activePage()?.path + '/' + file.path : null"
+              [src]="file.path ? './assets/files/' + activePage()?.path + '/' + file.path : null"
               (ended)="playingId = null"
             ></audio>
 
