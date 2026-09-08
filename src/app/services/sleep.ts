@@ -8,7 +8,7 @@ export class SleepService {
 
   private readonly router = inject(Router);
 
-  private readonly inactivityMs = 5  * 1000;
+  private readonly inactivityMs = 5 * 60 * 1000; // 5 minutes in milliseconds
 
   public readonly isAsleep = signal(false);
 
