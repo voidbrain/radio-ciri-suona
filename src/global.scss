@@ -9,6 +9,30 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
+@font-face {
+  font-family: 'Special Elite';
+  src: url('/assets/fonts/SpecialElite-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Helps with faster text rendering */
+}
+
+@font-face {
+  font-family: 'Montserrat Bold';
+  src: url('/assets/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap; /* Helps with faster text rendering */
+}
+
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url('/assets/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Helps with faster text rendering */
+}
+
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";
 
@@ -36,9 +60,16 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 // @import '@ionic/angular/css/palettes/dark.system.css';
 
+:root {
+  --red: rgb(127, 45, 43);
+  --white: rgb(246, 235, 220);
+  --graytext: rgb(91, 92, 96);
+}
+
 body {
-  background-color: #fcf9f2;
-  color: #d32f2f;
+  background-color: var(--white);
+  color: var(--graytext);
+  font-family: "Roboto Regular", sans-serif;
 }
 
 ion-header {
@@ -48,26 +79,25 @@ ion-header {
 ion-toolbar {
   --border-width: 0 !important;
   --box-shadow: none !important;
-  border-bottom: 4px solid #d32f2f;
+  border-bottom: 4px solid var(--red);
 }
 
 ion-toolbar::part(container) {
   box-shadow: none !important;
   border: 0 !important;
-  // color: #fcf9f2;
-  // background-color: #d32f2f;
   height: 5em;
 }
 
 :root {
-  --ion-background-color: #fcf9f2;
-  --ion-text-color: #d32f2f;
-  --ion-toolbar-color: #d32f2f;
+  --ion-background-color: var(--white);
+  --ion-text-color: var(--graytext);
+  --ion-toolbar-color: var(--red);
 
   a {
     background: var(--ion-background-color);
-    color: var(--ion-text-color);
+    color: var(--red);
     text-decoration: none;
+    font-weight: bold;
     display: block;
   }
 
@@ -76,8 +106,8 @@ ion-toolbar::part(container) {
   }
 
   button {
-    background-color: #fcf9f2;
-    color: #d32f2f;
+    background-color: var(--white);
+    color: var(--red);
     border: 1px solid;
     padding: 5px;
     margin-top: 10px;
@@ -90,13 +120,20 @@ ion-toolbar::part(container) {
     }
 
   .card {
-    color: #d32f2f;
-    border-bottom: 2px solid #d32f2f;
+    color: var(--graytext);
+    border-bottom: 2px solid var(--red);
 
     padding: 1em;
-    h2 { text-transform: uppercase; }
+    h2 {
+      text-transform: uppercase;
+      color: var(--red);
+      font-family: "Montserrat Bold", sans-serif;
+    }
 
-
+    &.pages {
+      color: var(--red);
+      font-family: "Montserrat Bold", sans-serif;
+    }
   }
 
   .card.details {
@@ -104,6 +141,12 @@ ion-toolbar::part(container) {
   }
 
   figure { margin: 0; }
+
+  .subtitle {
+    color: var(--red);
+    font-weight: bold;
+    font-family: 'Special Elite', serif;
+  }
 
 
 }
