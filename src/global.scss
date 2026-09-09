@@ -78,7 +78,7 @@ ion-button.outline {
   --border-width: 2px;
   --border-color: var(--ion-color-primary);
   opacity: .8;
-  --border-radius: 8px;
+  --border-radius: 8px!important;
 }
 
 body {
