@@ -23,7 +23,7 @@ export interface Page {
 export class Content {
   public readonly pages = signal<Page[]>([
     { id: 1,
-      name: "Cronaca e politica",
+      name: "<span class='number'>1.</span> Cronaca e politica",
       image: "images/image1.png",
       path: "1 Cronaca e politica",
       description1: "Nella seconda metà degli anni ’70 l’Italia attraversa una fase di profonda instabilità politica e sociale. Nel 1976 il terremoto del Friuli e il disastro ambientale di Seveso sconvolgono il Paese. Il movimento giovanile del ’77 anima <b>università e piazze</b> con proteste, occupazioni e duri scontri con le forze dell’ordine. ",
@@ -42,7 +42,7 @@ export class Content {
     ] },
 
     { id: 2,
-      name: "Lavoro e sindacato",
+      name: "<span class='number'>2.</span> Lavoro e sindacato",
       image: "images/image2.png",
       path: "2 Lavoro e sindacato",
       description1: "Negli anni ’70 il mondo del lavoro cambia profondamente, tra conquiste e tensioni raccontate dalle radio libere. Le lotte dell’ “autunno caldo” del 1969 portano allo <b>Statuto dei lavoratori</b>, che introduce nuovi diritti e favorisce la sindacalizzazione nelle fabbriche.",
@@ -60,7 +60,7 @@ export class Content {
         { id: 10, path: "10 Lavoratori del circo- intervista a Moira Orfei, 1978.mp3", title: "<span class='number'>10.</span> Lavoratori del circo: intervista a Moira Orfei, 1979" }
     ] },
     { id: 3,
-      name: "Manifestazioni e movimenti di piazza",
+      name: "<span class='number'>3.</span> Manifestazioni e movimenti di piazza",
       image: "images/image6.png",
       path: "3 Manifestazioni e movimenti di piazza",
       description1: "Nella seconda metà degli anni ’70 le <b>piazze italiane</b> diventano il luogo in cui si esprime il disagio di un’intera generazione. Studenti, giovani operai, disoccupati, femministe e militanti della sinistra extraparlamentare chiedono nuovi diritti e contestano la società tradizionale, in particolare sui temi del corpo, della sessualità e della condizione femminile. ",
@@ -76,7 +76,7 @@ export class Content {
         { id: 8, path: "8 Repressione poliziesca di manifestazioni studentesche e sindacali, 1977.mp3", title: "<span class='number'>8.</span> Repressione poliziesca di manifestazioni studentesche e sindacali, 1977" }
     ] },
     { id: 4,
-      name: "Protagonismo femminile",
+      name: "<span class='number'>4.</span> Protagonismo femminile",
       image: "images/image7.png",
       path: "4 Protagonismo femminile",
       description1: "Negli anni ’70 l’Italia vive una stagione decisiva per i <b>diritti delle donne</b>. Dopo la legge sul divorzio del 1970 e il referendum del 1974, la legge 194 del 1978 regolamenta l’interruzione volontaria di gravidanza, confermata dal referendum del 1981. I sindacati sostengono le lotte per la <b>parità salariale</b> e le mobilitazioni per l’aborto e la salute. ",
@@ -92,7 +92,7 @@ export class Content {
         { id: 8, path: "8 La legge sull’aborto intervento a Monastier e interviste a Castelfranco Veneto 1978.mp3", title: "<span class='number'>8.</span> La legge sull’aborto: intervento a Monastier e interviste a Castelfranco Veneto, 1978" }
     ] },
     { id: 5,
-      name: "Scuola e studenti",
+      name: "<span class='number'>5.</span> Scuola e studenti",
       image: "images/image8.png",
       path: "5 Scuola e studenti",
       description1: "Negli anni ’70 la scuola italiana attraversa un processo di democratizzazione che supera gradualmente i retaggi ereditati dal fascismo. Le riforme promuovono il <b>diritto allo studio</b>, l’aggiornamento dei docenti e una maggiore partecipazione. Nascono gli asili nido comunali, il tempo pieno e gli organi collegiali aperti a studenti e famiglie. Si diffondono esperienze di didattica attiva e la “<b>scuola delle 150 ore</b>” consente a centinaia di migliaia di lavoratori di completare la scuola dell’obbligo.",
@@ -108,7 +108,7 @@ export class Content {
         { id: 8, path: "8 Esame di terza media intervista a un lavoratorestudente respinto, sd.mp3", title: "<span class='number'>8.</span> Esame di terza media: intervista a un lavoratore-studente respinto, s.d." }
     ] },
     { id: 6,
-      name: "Musica e controcultura",
+      name: "<span class='number'>6.</span> Musica e controcultura",
       image: "images/image9.png",
       path: "6 Musica e controcultura",
       description1: "La musica è centrale nelle radio libere, diventando il linguaggio con cui i giovani esprimono <b>ribellione</b> e desiderio di cambiamento. Le emittenti diffondono rock, pop britannico, progressive, cantautorato, reggae e, dalla seconda metà degli anni ’70, <b>punk</b> e <b>new wave</b>, proponendo una programmazione alternativa a quella della RAI. Accanto agli artisti internazionali trovano spazio musicisti emergenti e repertori locali.",
