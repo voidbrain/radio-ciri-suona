@@ -38,7 +38,7 @@ export class Content {
         { id: 7, path: "7 La RAI TV di fronte ai fatti del ’77- intervista a un cittadino, 1977.mp3", title: "<span class='number'>7.</span> La RAI TV di fronte ai fatti del ’77: intervista a un cittadino, 1977" },
         { id: 8, path: "8 Il rapimento di Aldo Moro- discorso di Bruno Marton, 1978.mp3", title: "<span class='number'>8.</span> Il rapimento di Aldo Moro: discorso di Bruno Marton, 1978" },
         { id: 9, path: "9  L’assassinio di Peppino Impastato- collegamento con Radio Aut, 1978.mp3", title: "<span class='number'>9.</span> L’assassinio di Peppino Impastato: collegamento con Radio Aut, 1978" },
-        { id: 10, path: "10 Le dimissioni di Giovanni Leone- interviste al sindaco Antonio Mazzarolli e a cittadini, 1978.mp3", title: "<span class='number'>10</span>. Le dimissioni di Giovanni Leone: interviste al sindaco Antonio Mazzarolli e ai cittadini, 1978" }
+        { id: 10, path: "10 Le dimissioni di Giovanni Leone- interviste al sindaco Antonio Mazzarolli e a cittadini, 1978.mp3", title: "<span class='number'>10.</span> Le dimissioni di Giovanni Leone: interviste al sindaco Antonio Mazzarolli e ai cittadini, 1978" }
     ] },
 
     { id: 2,
@@ -57,7 +57,7 @@ export class Content {
         { id: 7, path: "7 Nocività dell’ambiente di lavoro all’Appiani- servizio di Radio Treviso 103, 1977.mp3", title: "<span class='number'>7.</span> Nocività dell’ambiente di lavoro all’Appiani: servizio di Radio Treviso 103, 1977" },
         { id: 8, path: "8 Salute e malattia alla Sebring Industria Tognana- intervista a una componente del Consiglio di fabbrica, 1978.mp3", title: "<span class='number'>8.</span> Salute e malattia alla Sebring Industria Tognana: intervista a una componente del Consiglio di fabbrica, 1978" },
         { id: 9, path: "9 La cooperativa Distilleria delle Cantine Sociali Venete- intervista al sindacalista Gasparini, 1978.mp3", title: "<span class='number'>9.</span> La cooperativa Distilleria delle Cantine Sociali Venete: intervista al sindacalista Gasparini, 1978" },
-        { id: 10, path: "10 Lavoratori del circo- intervista a Moira Orfei, 1978.mp3", title: "<span class='number'>10</span>. Lavoratori del circo: intervista a Moira Orfei, 1979" }
+        { id: 10, path: "10 Lavoratori del circo- intervista a Moira Orfei, 1978.mp3", title: "<span class='number'>10.</span> Lavoratori del circo: intervista a Moira Orfei, 1979" }
     ] },
     { id: 3,
       name: "Manifestazioni e movimenti di piazza",
