@@ -22,7 +22,7 @@
             ></audio>
 
             <div [class.playing]="playingId === file.id">
-              <strong>{{ file.title }}</strong><br />
+              <strong [innerHTML]="file.title"></strong><br />
 
               <button [class]="'play' + (file.path === undefined ? ' disabled' : '')"
               [disabled]="file.path === undefined" (click)="play(file.id, player)">
