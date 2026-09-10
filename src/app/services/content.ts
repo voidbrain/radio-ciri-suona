@@ -23,7 +23,7 @@ export interface Page {
 export class Content {
   public readonly pages = signal<Page[]>([
     { id: 1,
-      name: "1Cronaca e politica",
+      name: "Cronaca e politica",
       image: "images/image1.png",
       path: "1 Cronaca e politica",
       description1: "Nella seconda metà degli anni ’70 l’Italia attraversa una fase di profonda instabilità politica e sociale. Nel 1976 il terremoto del Friuli e il disastro ambientale di Seveso sconvolgono il Paese. Il movimento giovanile del ’77 anima <b>università e piazze</b> con proteste, occupazioni e duri scontri con le forze dell’ordine. ",
