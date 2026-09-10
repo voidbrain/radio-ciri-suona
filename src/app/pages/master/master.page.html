@@ -17,7 +17,7 @@
         @for (page of pages(); track $index) {
         <ion-col size="6">
           <div class="pages card">
-              <a class="section" [routerLink]="['/details', page.id]" [innerHTML]="page.name"></a>
+              <a class="section" [routerLink]="['/details', page.id]">{{ page.name }}</a>
           </div>
         </ion-col>
         }
