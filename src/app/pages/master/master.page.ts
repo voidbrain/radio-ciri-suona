@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { IonContent, IonGrid, IonRow, IonCol, IonCard, IonCardContent } from '@ionic/angular/standalone';
+import { IonContent, IonGrid, IonRow, IonCol, IonCard, IonCardContent, IonRippleEffect } from '@ionic/angular/standalone';
 import { AppHeader } from '../../shared/header/header';
 import { Content } from '@/app/services/content';
 import { RouterLink } from '@angular/router';
@@ -11,7 +11,7 @@ import { KioskService } from '@/app/services/kiosk';
   selector: 'app-master',
   templateUrl: 'master.page.html',
   styleUrls: ['master.page.scss'],
-  imports: [IonContent, AppHeader, RouterLink, IonGrid, IonRow, IonCol],
+  imports: [IonRippleEffect, IonContent, AppHeader, RouterLink, IonGrid, IonRow, IonCol],
 })
 
   export class MasterPage {

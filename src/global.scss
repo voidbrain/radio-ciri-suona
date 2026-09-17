@@ -61,7 +61,7 @@
 // @import '@ionic/angular/css/palettes/dark.system.css';
 
 :root {
-  --red: rgb(127, 45, 43);
+  --red: rgb(156, 30, 33);
   --white: rgb(246, 235, 220);
   --graytext: rgb(91, 92, 96);
   --whiteheader:  #eee4e4;
@@ -103,6 +103,7 @@ ion-toolbar{
   max-width: 120px;
   max-height: auto;
   display: inline-block;
+  margin-left: 1em;
 }
 .header-title {
   font-family: "Special Elite", serif;
@@ -168,7 +169,7 @@ ion-toolbar::part(container) {
       color: var(--red);
       font-family: "Montserrat Bold", sans-serif;
     }
-    img { margin: auto; display: block; }
+    img { margin: auto; display: block; max-width: 500px; }
   }
 
   .card.details {

@@ -33,7 +33,6 @@ export class DetailsPage {
     this.sleepService.resetActivity();
   }
 
-
   private readonly content = inject(Content);
   private readonly sleepService = inject(SleepService);
   private readonly route = inject(ActivatedRoute);
@@ -42,11 +41,19 @@ export class DetailsPage {
   currentPlayer: HTMLAudioElement | null = null;
 
   play(id: number, player: HTMLAudioElement) {
+    // 1. If clicking a completely different track, clean and stop the old one
     if (this.currentPlayer && this.currentPlayer !== player) {
       this.currentPlayer.pause();
       this.currentPlayer.currentTime = 0;
     }
 
+    // 2. NEW: If clicking the EXACT same track that is already playing,
+    // wind its playback position back to 0 so it restarts cleanly.
+    if (this.currentPlayer === player && this.playingId === id) {
+      player.currentTime = 0;
+    }
+
+    // 3. Assign and initialize playback state parameters
     this.currentPlayer = player;
     this.playingId = id;
 
@@ -64,11 +71,9 @@ export class DetailsPage {
   // Safe computed derived state
   protected readonly activePage = computed<Page | null>(() => {
     const id = this.id();
-
     if (!id) return null;
 
     const numericId = Number(id);
-
     if (Number.isNaN(numericId)) return null;
 
     const pages = this.content.pages();
@@ -92,7 +97,6 @@ export class DetailsPage {
       this.currentPlayer.currentTime = 0;
       this.currentPlayer = null;
     }
-
     this.playingId = null;
   }
 }

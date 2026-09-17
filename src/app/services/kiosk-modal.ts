@@ -12,8 +12,8 @@ import {
   IonInput,
   IonText
 } from '@ionic/angular/standalone';
-
 import { ModalController } from '@ionic/angular/standalone';
+import { KioskService } from '../services/kiosk'; // <-- Change this path if needed to find your service
 
 @Component({
   selector: 'app-exit-kiosk-modal',
@@ -67,23 +67,25 @@ import { ModalController } from '@ionic/angular/standalone';
 export class KioskModalComponent implements OnDestroy {
 
   private modalCtrl = inject(ModalController);
+  private kiosk = inject(KioskService); // <-- Securely grabbed via Angular Injection
 
   password = '';
   error = false;
 
   private timer?: any;
-  private readonly SECRET = '1234';
+  private readonly SECRET = '1112';
 
   constructor() {
-    // auto close after 15s
     this.timer = setTimeout(() => {
       this.cancel();
     }, 15000);
   }
 
-  checkPassword() {
+  async checkPassword() {
     if (this.password === this.SECRET) {
-      this.modalCtrl.dismiss(null, 'exit'); // ✅ THIS is correct
+      // Triggers the escape sequence, hitting Capgo and your custom Java thread setup
+      await this.kiosk.exit();
+      this.modalCtrl.dismiss(null, 'exit');
     } else {
       this.error = true;
     }
@@ -94,6 +96,8 @@ export class KioskModalComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
-    clearTimeout(this.timer);
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
   }
 }

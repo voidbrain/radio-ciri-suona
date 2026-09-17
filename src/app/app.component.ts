@@ -17,6 +17,12 @@ export class AppComponent {
 
   async init() {
     await this.platform.ready();
+
+    // Check launcher status to ensure native clearance
+    if (this.platform.is('android')) {
+      await this.kiosk.isSetAsLauncher();
+    }
+
     await this.kiosk.enter();
     this.isInKioskMode.set((await this.kiosk.isInKiosk()).isInKioskMode);
   }

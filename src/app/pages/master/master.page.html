@@ -1,7 +1,7 @@
 <app-header class="width1200" title="La primavera delle radio libere" title2="1976-2026"></app-header>
 
 <ion-content class="ion-padding" [fullscreen]="true">
-  <div class="page-16-10">
+  <div class="">
     <ion-grid class="ion-padding">
       <ion-row>
         <ion-col size="12">
@@ -14,14 +14,27 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        @for (page of pages(); track $index) {
-        <ion-col size="6">
-          <div class="pages card">
-              <a class="section" [routerLink]="['/details', page.id]">{{ page.name }}</a>
-          </div>
-        </ion-col>
-        }
-      </ion-row>
+  @for (page of pages(); track $index) {
+  <ion-col size="6">
+    <!--
+      1. Moved the routerLink to the card container so the ENTIRE box is a button
+      2. Added 'cursor: pointer' to handle the tap selection area correctly
+    -->
+    <div class="pages card ion-activatable"
+         style="position: relative; overflow: hidden; cursor: pointer;"
+         [routerLink]="['/details', page.id]">
+
+        <ion-ripple-effect></ion-ripple-effect>
+
+        <!-- Changed <a> to <span> since the card wrapper now handles the navigation -->
+        <span class="section" style="display: block; width: 100%; height: 100%;">
+          {{ page.name }}
+        </span>
+    </div>
+  </ion-col>
+  }
+</ion-row>
+
     </ion-grid>
     <div class="hidden-form-trigger" (click)="openExitKioskModal()"></div>
   </div>

@@ -1,7 +1,7 @@
 <app-header class="width1200" [backButton]="true" title="La primavera delle radio libere" title2="1976-2026"></app-header>
 
 <ion-content class="ion-padding" [fullscreen]="true">
-  <div class="page-16-10">
+  <div class="">
     <div class="card">
       <h2>{{ activePage()?.name }}</h2>
       <p [innerHTML]="activePage()?.description1"></p>
@@ -42,7 +42,17 @@
                   Playing
 
                 } @else {
-                  ▶ Play
+                  <svg
+                    xmlns="http://w3.org"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    height="1em"
+                    fill="currentColor"
+                    style="vertical-align: middle; margin-right: 4px;"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  Play
                 }
 
               </button>
